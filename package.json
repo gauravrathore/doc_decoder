@@ -1,0 +1,11 @@
+{
+  "name": "doc_decoder",
+  "version": "1.0.0",
+  "description": "pdf read upload and show on web page",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
