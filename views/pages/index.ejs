@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="row">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<div class="row" style="display: inline-block;">
+    <% if(!error) { %> 
+<div class="card" style="width: 18rem; margin-top: 15%; margin-left: 40%;" >
+   
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleInputEmail1">upload file</label>
+          <input type="file" class="form-control" name="file">
+           </div>
+           <div style="margin-top: 5%; margin-bottom: 10px;">
+            <button type="submit" class="btn btn-primary">upload</button>
+           </div>
+        
+      </form> 
+ 
+</div>
+<% if(fileList.length>0) { %>
+<div class="card" style="display: inline-block; margin-top: 5%; margin-left: 5%;">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">fileName</th>
+            <th scope="col">view</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(let i=0; i < fileList.length; i++) { %>
+                <tr>
+                   <td><%= i+1%></td> 
+                  <td><%= fileList[i].fileName %></td>
+                  <td><a href="/<%= fileList[i]._id%>" class="view" role="button">view</a></td>
+                </tr>
+             <% } %>
+        </tbody>
+      </table>
+</div>
+<% } %>
+<% } else {  %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+ <% } %>
+</div>
+
+</body>
+</html>

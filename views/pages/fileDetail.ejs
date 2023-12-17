@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="row">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+<div class="row" style="display: inline-block;">
+<div style="margin: 5%;">
+
+</div>
+<div>
+    <table class="table" style="padding: 30%;">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">File name</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(let i=0; i < data.length; i++) { %>
+                <tr>
+                   <td><%=data[i]._id%></td>
+                   <td><%=data[i].fileName%></td>
+                   <td><%=data[i].content%></td>
+                </tr>
+                <% } %>
+        </tbody>
+      </table>
+
+</div>
+  
+         
+   
+    </div>
+</body>
+</html>
